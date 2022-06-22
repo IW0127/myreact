@@ -13,7 +13,7 @@ const e = React.createElement;
 function formatName(user) {
   return user.firstName + " " + user.lastName;
 }
-
+/* props */
 const user = {
   firstName: "Harper",
   lastName: "Perez",
