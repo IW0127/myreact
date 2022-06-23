@@ -4,6 +4,11 @@ import "./index.css";
 import { App, Welcome } from "./App";
 import Comment from "./practise/props";
 import Form from "./practise/event";
+import Greeting, {
+  ExplainBindingsComponent,
+  Mailbox,
+} from "./practise/Conditional";
+import NumberList, { Blog } from "./practise/ListsAndKeys";
 import reportWebVitals from "./reportWebVitals";
 
 /**
@@ -74,6 +79,20 @@ class LoggingButton extends React.Component {
     return <button onClick={this.handleClick}>Click me</button>;
   }
 }
+
+const messages = ["React", "Re: React", "Re:Re: React"];
+
+const numbers = [
+  { id: 1, text: 1 },
+  { id: 2, text: 2 },
+  { id: 3, text: 3 },
+  { id: 4, text: 4 },
+  { id: 5, text: 5 },
+];
+const posts = [
+  { id: 1, title: "Hello World", content: "Welcome to learning React!" },
+  { id: 2, title: "Installation", content: "You can install React from npm." },
+];
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -95,6 +114,11 @@ root.render(
       <Clock />
       <Form />
       <LoggingButton />
+      <Greeting />
+      <ExplainBindingsComponent />
+      <Mailbox unreadMessages={messages} />
+      <NumberList numbers={numbers} />
+      <Blog posts={posts} />
     </React.StrictMode>
   </div>
 );
